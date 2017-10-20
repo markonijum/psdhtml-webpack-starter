@@ -88,7 +88,7 @@ function copy() {
 // Compile Sass into CSS
 // In production, the CSS is compressed
 function sass() {
-  return gulp.src('src/assets/scss/app.scss')
+  return gulp.src('src/assets/scss/style.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
@@ -119,9 +119,6 @@ let webpackConfig = {
         ]
       }
     ]
-  },
-  externals: {
-    jquery: 'jQuery'
   }
 }
 // Combine JavaScript into one file
@@ -188,8 +185,10 @@ gulp.task('phpcbf', function () {
 // Start BrowserSync to preview the site in
 function server(done) {
   browser.init({
-    proxy: BROWSERSYNC.url,
-
+    // proxy: BROWSERSYNC.url,
+    server: {
+      baseDir: BROWSERSYNC.url
+    },
     ui: {
       port: 8080
     },
@@ -208,7 +207,8 @@ function reload(done) {
 function watch() {
   gulp.watch(PATHS.assets, copy);
   gulp.watch('src/assets/scss/**/*.scss').on('all', sass);
-  gulp.watch('**/*.php').on('all', browser.reload);
+  // gulp.watch('**/*.php').on('all', browser.reload);
+  gulp.watch('**/*.html').on('all', browser.reload);
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
 }
