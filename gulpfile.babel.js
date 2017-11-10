@@ -12,7 +12,6 @@ import dateFormat    from 'dateformat';
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import named         from 'vinyl-named';
-import webpack       from 'webpack';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -120,15 +119,7 @@ let webpackConfig = {
         ]
       }
     ]
-  },
-  plugins: [
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        Popper: ['popper.js', 'default']
-      })
-  ]
+  }
 }
 // Combine JavaScript into one file
 // In production, the file is minified

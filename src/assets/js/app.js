@@ -1,2 +1,1 @@
-// import $ from 'jquery';
-import 'bootstrap-sass';
+import $ from 'jquery';
