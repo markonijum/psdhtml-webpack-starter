@@ -25,6 +25,7 @@ PATHS:
     - "node_modules/foundation-sites/scss"
     - "node_modules/motion-ui/src"
     - "node_modules/susy/sass"
+    - "node_modules/bootstrap-sass/assets/stylesheets"
     - "node_modules"
   # Paths to JavaScript entry points for webpack to bundle modules
   entries:

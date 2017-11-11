@@ -12,7 +12,6 @@ import dateFormat    from 'dateformat';
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import named         from 'vinyl-named';
-import webpack       from 'webpack';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -112,7 +111,8 @@ let webpackConfig = {
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /.jsx?$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader'
@@ -122,7 +122,7 @@ let webpackConfig = {
     ]
   },
   plugins: [
-      new webpack.ProvidePlugin({
+      new webpack2.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
@@ -219,5 +219,6 @@ function watch() {
   // gulp.watch('**/*.php').on('all', browser.reload);
   gulp.watch('**/*.html').on('all', browser.reload);
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
+  gulp.watch('src/assets/js/**/*.jsx').on('all', gulp.series(javascript, browser.reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
 }
