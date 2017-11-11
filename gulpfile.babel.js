@@ -108,6 +108,10 @@ function sass() {
 }
 
 let webpackConfig = {
+  resolve : {
+    extensions: ['.js', '.json', '.jsx'],
+    modules: ['./src/assets/js','node_modules']
+  },
   module: {
     rules: [
       {
