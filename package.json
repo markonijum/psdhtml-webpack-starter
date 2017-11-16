@@ -1,6 +1,6 @@
 {
-  "name": "foundationpress",
-  "title": "FoundationPress",
+  "name": "modern-web-dev-starter",
+  "title": "Modern WebApp Development starter",
   "version": "2.10.4",
   "description": "FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb",
   "homepage": "https://foundationpress.olefredrik.com",
@@ -14,20 +14,7 @@
     "phpcs": "gulp phpcs",
     "phpcbf": "gulp phpcbf"
   },
-  "keywords": [
-    "FoundationPress",
-    "WordPress",
-    "starter theme",
-    "Foundation",
-    "semantic",
-    "mobile first",
-    "customizable",
-    "responsive"
-  ],
   "dependencies": {
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
     "bootstrap-sass": "^3.3.7",
     "foundation-sites": "6.4.1",
     "jquery": "^3.2.1",
@@ -44,6 +31,9 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.3.13",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "babel-register": "^6.7.2",
     "browser-sync": "^2.10.0",
     "dateformat": "^3.0.2",
@@ -73,13 +63,6 @@
     "webpack": "^3.8.1",
     "webpack-stream": "^3.2.0",
     "yargs": "^3.8.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/olefredrik/foundationpress.git"
-  },
-  "bugs": {
-    "url": "https://github.com/olefredrik/foundationpress/issues"
   },
   "babel": {
     "presets": [
